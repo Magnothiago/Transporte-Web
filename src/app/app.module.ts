@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {ClienteModule} from './cliente/cliente.module';
+import {HttpClientModule} from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import {ClienteModule} from './cliente/cliente.module';
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    ClienteModule
+    ClienteModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

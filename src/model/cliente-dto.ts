@@ -1,8 +1,7 @@
 export class ClienteDto {
   id: number;
-  nome: string;
   cpf: string;
+  nome: string;
   primeiroNome: string;
   dataNascimento: Date;
-  versao: number;
 }
