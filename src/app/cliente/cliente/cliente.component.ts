@@ -19,9 +19,8 @@ export class ClienteComponent implements OnInit {
 
   cliente: ClienteDto = {
     id: 0,
-    nome: 'ClienteService Angular',
-    cpf: '01446294102',
-    primeiroNome: 'ClienteService',
+    nome: 'Teste',
+    cpf: '61350593001',
     dataNascimento: new Date(2001, 1, 1),
   };
   // clientes: ClienteDto[] = [
