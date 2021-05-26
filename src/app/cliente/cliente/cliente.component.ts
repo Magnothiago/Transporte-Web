@@ -40,8 +40,8 @@ export class ClienteComponent implements OnInit {
     });
   }
   salvar(): void {
-    this.clienteService.salvarCliente(this.cliente).subscribe((dados) =>{
-      this.clienteService.showMessage('Cliente salvo',false);
+    this.clienteService.salvarCliente(this.cliente).subscribe((dados) => {
+      this.clienteService.showMessage('Cliente salvo', false);
       this.clientes.push(dados);
       this.dataSource = this.clientes;
       location.reload();

@@ -32,7 +32,13 @@ export class ClienteService {
       catchError(ex => this.errorHandler(ex))
     );
   }
-
+  editarCliente(cliente: ClienteDto): Observable<ClienteDto> {
+    const url = `${environment.config.URL_API}/cliente/edit`;
+    return this.httpCliente.post<ClienteDto>(url, cliente).pipe(
+      map(obj => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
   errorHandler(e: any): Observable<any>{
     this.showMessage('Deu ruim!', true );
     return EMPTY;
