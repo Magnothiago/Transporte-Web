@@ -55,6 +55,10 @@ export class ClienteDetalheComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.cliente = this.formCliente.value;
+    this.clienteService.salvarCliente(this.cliente).subscribe(() => {
+      this.clienteService.showMessage('Cliente salco com sucesso', false);
+    });
   }
 
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

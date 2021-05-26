@@ -6,6 +6,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import {ClienteModule} from './cliente/cliente.module';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {IConfig, NgxMaskModule} from 'ngx-mask';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSliderModule,
     ClienteModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
