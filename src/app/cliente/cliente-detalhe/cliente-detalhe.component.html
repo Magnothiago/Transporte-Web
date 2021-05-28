@@ -15,12 +15,21 @@
 
           <mat-form-field class="example-full-width">
             <mat-label>Nome</mat-label>
-            <input type="text" matInput placeholder="Ex. João" formControlName="nome"
-                  pattern="[a-zA-Z]*" required>
-            <mat-error *ngIf="isFieldInvalid('nome')">
-              por favor entre com nome válido!
+            <input type="text" matInput placeholder="Ex: João"  [errorStateMatcher]="matcher"
+                   pattern="[a-zA-Z]*" required formControlName="nome">
+            <mat-error *ngIf="getControl.nome.hasError('nome') && !getControl.nome.hasError('required')">
+              por favor entre com cpf válido!
             </mat-error>
           </mat-form-field>
+<!--          <mat-form-field class="example-full-width">-->
+<!--            <mat-label>Nome</mat-label>-->
+<!--            <input type="text" matInput placeholder="Ex. João" formControlName="nome"-->
+<!--                   [errorStateMatcher]="matcher"-->
+<!--                   required>-->
+<!--            <mat-error *ngIf="getControl.nome.hasError('nome') && !getControl.nome.hasError('required')">-->
+<!--              por favor entre com nome válido!-->
+<!--            </mat-error>-->
+<!--          </mat-form-field>-->
 
           <mat-form-field class="example-full-width">
             <mat-label>CPF</mat-label>
@@ -30,15 +39,6 @@
               por favor entre com cpf válido!
             </mat-error>
           </mat-form-field>
-
-<!--          <mat-form-field class="example-full-width">-->
-<!--            <mat-label>Primeiro Nome</mat-label>-->
-<!--            <input type="text" matInput placeholder="Ex: João"  [errorStateMatcher]="matcher"-->
-<!--                   pattern="[a-zA-Z]*" required formControlName="primeiroNome">-->
-<!--            <mat-error *ngIf="getControl.primeiroNome.hasError('primeiroNome') && !getControl.primeiroNome.hasError('required')">-->
-<!--              por favor entre com cpf válido!-->
-<!--            </mat-error>-->
-<!--          </mat-form-field>-->
 
           <mat-form-field class="example-full-width">
             <mat-label>Data de Nascimento</mat-label>

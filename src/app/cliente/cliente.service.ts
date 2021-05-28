@@ -53,4 +53,12 @@ export class ClienteService {
     });
   }
 
+  buscarClientesPorId(id: number): Observable<ClienteDto> {
+    const url = `${environment.config.URL_API}/cliente/` ;
+    return this.httpCliente.get<ClienteDto>(url + id).pipe(
+      map((cliente) => cliente),
+      catchError( (ex) => this.errorHandler(ex))
+    );
+  }
+
 }
