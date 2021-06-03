@@ -10,17 +10,21 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import {ClienterouteModule} from './clienteroute/clienteroute.module';
+import {NavBarComponent} from '../nav-bar/nav-bar.component';
+
 
 
 
 @NgModule({
   declarations: [
     ClienteComponent,
-    ClienteDetalheComponent
+    ClienteDetalheComponent,
+    NavBarComponent
   ],
   exports: [
     ClienteComponent,
-    ClienteDetalheComponent
+    ClienteDetalheComponent,
+    NavBarComponent
   ],
   imports: [
     CommonModule,

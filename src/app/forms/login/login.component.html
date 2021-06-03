@@ -1,0 +1,24 @@
+<div class="container"
+     >
+  <form (ngSubmit)="onSubmit()">
+  <div class="mb-3 row">
+  <label for="staticEmail" class="col-sm-2 col-form-label">User</label>
+  <div class="col-sm-10">
+    <input name = "user" [(ngModel)] = "usuario.user" type="text" class="form-control-plaintext" id="staticEmail">
+  </div>
+</div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
+    <div class="col-sm-10">
+      <input name = "senha" [(ngModel)] = "usuario.senha" type="password" class="form-control" id="inputPassword">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-sm-10">
+      <button mat-button type="submit" (click)="onSubmit()" color="primary"> Login </button>
+    </div>
+  </div>
+  </form>
+</div>
+
+

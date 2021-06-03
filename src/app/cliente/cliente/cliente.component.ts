@@ -36,6 +36,9 @@ export class ClienteComponent implements OnInit {
   dataSource;
 
   ngOnInit(): void {
+    this.carregarLista();
+  }
+  carregarLista(): void {
     this.clienteService.listClientes().subscribe(dados => {
       this.clientes = dados;
       this.dataSource = this.clientes;
@@ -43,6 +46,7 @@ export class ClienteComponent implements OnInit {
   }
   salvar(): void {
     this.clienteService.salvarCliente(this.cliente).subscribe((dados) => {
+      this.carregarLista();
       this.clienteService.showMessage('Cliente salvo', false);
       this.clientes.push(dados);
       this.dataSource = this.clientes;

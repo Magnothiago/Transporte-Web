@@ -10,26 +10,35 @@ import {IConfig, NgxMaskModule} from 'ngx-mask';
 import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import {ClienterouteModule} from './cliente/clienteroute/clienteroute.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LoginComponent} from './forms/login/login.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
+    // NavBarComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatSliderModule,
-        ClienteModule,
-        HttpClientModule,
-        MatSnackBarModule,
-        NgxMaskModule.forRoot(),
-        RouterModule,
-        AppRoutingModule,
-        ClienterouteModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    ClienteModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    NgxMaskModule.forRoot(),
+    RouterModule,
+    AppRoutingModule,
+    ClienterouteModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
+  exports: [
+    // NavBarComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
